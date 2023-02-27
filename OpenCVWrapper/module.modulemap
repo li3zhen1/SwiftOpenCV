@@ -1,0 +1,6 @@
+
+module OpenCVWrapper {
+    header "OpenCVWrapper.hpp"
+    requires cplusplus
+    export *
+}
