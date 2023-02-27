@@ -21,3 +21,5 @@ void captureOneFrame(){
 bool OpenCV::readFrame(cv::VideoCapture& vc, cv::Mat &mat) {
     return vc.read(mat);
 }
+
+

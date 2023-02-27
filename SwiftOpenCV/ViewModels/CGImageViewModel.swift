@@ -10,5 +10,4 @@ import CoreGraphics
 
 open class CGImageViewModel: ObservableObject {
     @Published var current: CGImage?
-    
 }
