@@ -1,0 +1,609 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B78235A029AC737D00AB8DA2 /* SwiftOpenCVApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B782359F29AC737D00AB8DA2 /* SwiftOpenCVApp.swift */; };
+		B78235A229AC737D00AB8DA2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78235A129AC737D00AB8DA2 /* ContentView.swift */; };
+		B78235A429AC737E00AB8DA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B78235A329AC737E00AB8DA2 /* Assets.xcassets */; };
+		B78235A829AC737E00AB8DA2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B78235A729AC737E00AB8DA2 /* Preview Assets.xcassets */; };
+		B78235B229AC737F00AB8DA2 /* SwiftOpenCVTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78235B129AC737F00AB8DA2 /* SwiftOpenCVTests.swift */; };
+		B78235BC29AC737F00AB8DA2 /* SwiftOpenCVUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78235BB29AC737F00AB8DA2 /* SwiftOpenCVUITests.swift */; };
+		B78235BE29AC737F00AB8DA2 /* SwiftOpenCVUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B78235BD29AC737F00AB8DA2 /* SwiftOpenCVUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B78235AE29AC737F00AB8DA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B782359429AC737D00AB8DA2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B782359B29AC737D00AB8DA2;
+			remoteInfo = SwiftOpenCV;
+		};
+		B78235B829AC737F00AB8DA2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B782359429AC737D00AB8DA2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B782359B29AC737D00AB8DA2;
+			remoteInfo = SwiftOpenCV;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		B782359C29AC737D00AB8DA2 /* SwiftOpenCV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftOpenCV.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B782359F29AC737D00AB8DA2 /* SwiftOpenCVApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftOpenCVApp.swift; sourceTree = "<group>"; };
+		B78235A129AC737D00AB8DA2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B78235A329AC737E00AB8DA2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B78235A529AC737E00AB8DA2 /* SwiftOpenCV.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftOpenCV.entitlements; sourceTree = "<group>"; };
+		B78235A729AC737E00AB8DA2 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B78235AD29AC737F00AB8DA2 /* SwiftOpenCVTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftOpenCVTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B78235B129AC737F00AB8DA2 /* SwiftOpenCVTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftOpenCVTests.swift; sourceTree = "<group>"; };
+		B78235B729AC737F00AB8DA2 /* SwiftOpenCVUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftOpenCVUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B78235BB29AC737F00AB8DA2 /* SwiftOpenCVUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftOpenCVUITests.swift; sourceTree = "<group>"; };
+		B78235BD29AC737F00AB8DA2 /* SwiftOpenCVUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftOpenCVUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B782359929AC737D00AB8DA2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B78235AA29AC737F00AB8DA2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B78235B429AC737F00AB8DA2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B782359329AC737D00AB8DA2 = {
+			isa = PBXGroup;
+			children = (
+				B782359E29AC737D00AB8DA2 /* SwiftOpenCV */,
+				B78235B029AC737F00AB8DA2 /* SwiftOpenCVTests */,
+				B78235BA29AC737F00AB8DA2 /* SwiftOpenCVUITests */,
+				B782359D29AC737D00AB8DA2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B782359D29AC737D00AB8DA2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B782359C29AC737D00AB8DA2 /* SwiftOpenCV.app */,
+				B78235AD29AC737F00AB8DA2 /* SwiftOpenCVTests.xctest */,
+				B78235B729AC737F00AB8DA2 /* SwiftOpenCVUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B782359E29AC737D00AB8DA2 /* SwiftOpenCV */ = {
+			isa = PBXGroup;
+			children = (
+				B782359F29AC737D00AB8DA2 /* SwiftOpenCVApp.swift */,
+				B78235A129AC737D00AB8DA2 /* ContentView.swift */,
+				B78235A329AC737E00AB8DA2 /* Assets.xcassets */,
+				B78235A529AC737E00AB8DA2 /* SwiftOpenCV.entitlements */,
+				B78235A629AC737E00AB8DA2 /* Preview Content */,
+			);
+			path = SwiftOpenCV;
+			sourceTree = "<group>";
+		};
+		B78235A629AC737E00AB8DA2 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				B78235A729AC737E00AB8DA2 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B78235B029AC737F00AB8DA2 /* SwiftOpenCVTests */ = {
+			isa = PBXGroup;
+			children = (
+				B78235B129AC737F00AB8DA2 /* SwiftOpenCVTests.swift */,
+			);
+			path = SwiftOpenCVTests;
+			sourceTree = "<group>";
+		};
+		B78235BA29AC737F00AB8DA2 /* SwiftOpenCVUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B78235BB29AC737F00AB8DA2 /* SwiftOpenCVUITests.swift */,
+				B78235BD29AC737F00AB8DA2 /* SwiftOpenCVUITestsLaunchTests.swift */,
+			);
+			path = SwiftOpenCVUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B782359B29AC737D00AB8DA2 /* SwiftOpenCV */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B78235C129AC737F00AB8DA2 /* Build configuration list for PBXNativeTarget "SwiftOpenCV" */;
+			buildPhases = (
+				B782359829AC737D00AB8DA2 /* Sources */,
+				B782359929AC737D00AB8DA2 /* Frameworks */,
+				B782359A29AC737D00AB8DA2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftOpenCV;
+			productName = SwiftOpenCV;
+			productReference = B782359C29AC737D00AB8DA2 /* SwiftOpenCV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B78235AC29AC737F00AB8DA2 /* SwiftOpenCVTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B78235C429AC737F00AB8DA2 /* Build configuration list for PBXNativeTarget "SwiftOpenCVTests" */;
+			buildPhases = (
+				B78235A929AC737F00AB8DA2 /* Sources */,
+				B78235AA29AC737F00AB8DA2 /* Frameworks */,
+				B78235AB29AC737F00AB8DA2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B78235AF29AC737F00AB8DA2 /* PBXTargetDependency */,
+			);
+			name = SwiftOpenCVTests;
+			productName = SwiftOpenCVTests;
+			productReference = B78235AD29AC737F00AB8DA2 /* SwiftOpenCVTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B78235B629AC737F00AB8DA2 /* SwiftOpenCVUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B78235C729AC737F00AB8DA2 /* Build configuration list for PBXNativeTarget "SwiftOpenCVUITests" */;
+			buildPhases = (
+				B78235B329AC737F00AB8DA2 /* Sources */,
+				B78235B429AC737F00AB8DA2 /* Frameworks */,
+				B78235B529AC737F00AB8DA2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B78235B929AC737F00AB8DA2 /* PBXTargetDependency */,
+			);
+			name = SwiftOpenCVUITests;
+			productName = SwiftOpenCVUITests;
+			productReference = B78235B729AC737F00AB8DA2 /* SwiftOpenCVUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B782359429AC737D00AB8DA2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					B782359B29AC737D00AB8DA2 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+					B78235AC29AC737F00AB8DA2 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = B782359B29AC737D00AB8DA2;
+					};
+					B78235B629AC737F00AB8DA2 = {
+						CreatedOnToolsVersion = 14.1;
+						TestTargetID = B782359B29AC737D00AB8DA2;
+					};
+				};
+			};
+			buildConfigurationList = B782359729AC737D00AB8DA2 /* Build configuration list for PBXProject "SwiftOpenCV" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B782359329AC737D00AB8DA2;
+			productRefGroup = B782359D29AC737D00AB8DA2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B782359B29AC737D00AB8DA2 /* SwiftOpenCV */,
+				B78235AC29AC737F00AB8DA2 /* SwiftOpenCVTests */,
+				B78235B629AC737F00AB8DA2 /* SwiftOpenCVUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B782359A29AC737D00AB8DA2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B78235A829AC737E00AB8DA2 /* Preview Assets.xcassets in Resources */,
+				B78235A429AC737E00AB8DA2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B78235AB29AC737F00AB8DA2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B78235B529AC737F00AB8DA2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B782359829AC737D00AB8DA2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B78235A229AC737D00AB8DA2 /* ContentView.swift in Sources */,
+				B78235A029AC737D00AB8DA2 /* SwiftOpenCVApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B78235A929AC737F00AB8DA2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B78235B229AC737F00AB8DA2 /* SwiftOpenCVTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B78235B329AC737F00AB8DA2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B78235BC29AC737F00AB8DA2 /* SwiftOpenCVUITests.swift in Sources */,
+				B78235BE29AC737F00AB8DA2 /* SwiftOpenCVUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B78235AF29AC737F00AB8DA2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B782359B29AC737D00AB8DA2 /* SwiftOpenCV */;
+			targetProxy = B78235AE29AC737F00AB8DA2 /* PBXContainerItemProxy */;
+		};
+		B78235B929AC737F00AB8DA2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B782359B29AC737D00AB8DA2 /* SwiftOpenCV */;
+			targetProxy = B78235B829AC737F00AB8DA2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B78235BF29AC737F00AB8DA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B78235C029AC737F00AB8DA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		B78235C229AC737F00AB8DA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftOpenCV/SwiftOpenCV.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftOpenCV/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.lizhen.SwiftOpenCV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B78235C329AC737F00AB8DA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftOpenCV/SwiftOpenCV.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SwiftOpenCV/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.lizhen.SwiftOpenCV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B78235C529AC737F00AB8DA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.lizhen.SwiftOpenCVTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftOpenCV.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwiftOpenCV";
+			};
+			name = Debug;
+		};
+		B78235C629AC737F00AB8DA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.lizhen.SwiftOpenCVTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftOpenCV.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SwiftOpenCV";
+			};
+			name = Release;
+		};
+		B78235C829AC737F00AB8DA2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.lizhen.SwiftOpenCVUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SwiftOpenCV;
+			};
+			name = Debug;
+		};
+		B78235C929AC737F00AB8DA2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = me.lizhen.SwiftOpenCVUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SwiftOpenCV;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B782359729AC737D00AB8DA2 /* Build configuration list for PBXProject "SwiftOpenCV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B78235BF29AC737F00AB8DA2 /* Debug */,
+				B78235C029AC737F00AB8DA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B78235C129AC737F00AB8DA2 /* Build configuration list for PBXNativeTarget "SwiftOpenCV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B78235C229AC737F00AB8DA2 /* Debug */,
+				B78235C329AC737F00AB8DA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B78235C429AC737F00AB8DA2 /* Build configuration list for PBXNativeTarget "SwiftOpenCVTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B78235C529AC737F00AB8DA2 /* Debug */,
+				B78235C629AC737F00AB8DA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B78235C729AC737F00AB8DA2 /* Build configuration list for PBXNativeTarget "SwiftOpenCVUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B78235C829AC737F00AB8DA2 /* Debug */,
+				B78235C929AC737F00AB8DA2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B782359429AC737D00AB8DA2 /* Project object */;
+}
