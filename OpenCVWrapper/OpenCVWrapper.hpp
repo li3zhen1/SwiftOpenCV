@@ -19,6 +19,12 @@
 #include <opencv2/opencv.hpp>
 #include <string>
 
+//cv::_InputArray::~_InputArray() {
+//    
+//}
+
+void captureOneFrame();
+
 
 /// Redefination for macros, so that Swift know these magic numbers.
 /// https://docs.opencv.org/3.4/d1/d1b/group__core__hal__interface.html
@@ -98,6 +104,36 @@ inline auto readImage(const char* path) {
 inline auto readImage(const std::string& path) {
     return cv::imread(path);
 }
+//
+inline auto showImage(const char* windowName, const cv::Mat& mat) {
+    return cv::imshow(windowName, mat);
+}
+
+inline auto showImage(const std::string& windowName, const cv::Mat& mat) {
+    return cv::imshow(windowName, mat);
+}
+
+inline cv::String cvString(const char* str) {
+    return str;
+}
+
+bool readFrame(cv::VideoCapture& vc, cv::Mat &mat);
+
+inline bool captureFrame(cv::VideoCapture& vc, cv::Mat &mat) {
+    return vc.read(mat);
+}
+
+inline cv::Mat reverseChannels(const cv::Mat &mat) {
+    using namespace cv;
+    Mat Bands[3], merged;
+    split(mat, Bands);
+    Mat channels[3] = {Bands[2], Bands[1], Bands[0]};
+    merge(channels, 3, merged);
+    return merged;
+}
+
+//
+//
 
 
 };

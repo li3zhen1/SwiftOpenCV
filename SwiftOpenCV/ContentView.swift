@@ -14,13 +14,18 @@ func readImage(path: String) -> CGImage? {
 
 
 struct ContentView: View {
+    @StateObject var model = OpenCvCameraViewModel()
     var body: some View {
         VStack {
-            CGImageView(image: readImage(path: "/Users/lizhen/Movies/Screenshot 2023-02-23 at 16.54.33.png"), labelText: "Test")
+            CGImageView(image: model.current, labelText: "Test")
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Button {
+                model.startCapture()
+            } label: {
+                Text("Capture")
+            }
         }
         .padding()
     }
