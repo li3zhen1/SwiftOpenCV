@@ -59,8 +59,6 @@ struct Homework1OpenMediaView: View {
         self.text = text
     }
     
-    
-    
     var body: some View {
         VStack {
             Button {
@@ -79,16 +77,14 @@ struct Homework1OpenMediaView: View {
                 if let img = model.current {
                     let scale = min(Double(cgSize.width)/Double(img.width), Double(cgSize.height)/Double(img.height))
                     
-                    context.draw(Image(img, scale: 1.0, label: Text("")), in: CGRect(x: 0, y: 0, width: Int(Double(img.width)*scale), height: Int(Double(img.height)*scale)))
-                    context.draw(Text("2201210621 李臻").foregroundColor(.white).bold(), in: CGRect(x: 20, y: 20, width: 1000, height: cgSize.height))
+                    context.scaleBy(x: scale, y: scale)
+                    context.draw(Image(img, scale: 1.0, label: Text("")), in: CGRect(x: 0, y: 0, width: img.width, height: img.height))
+                    if let text {
+                        context.draw(Text(text).font(.largeTitle).foregroundColor(.white).bold(), in: CGRect(x: 20, y: 20, width: 1000, height: cgSize.height))
+                    }
                 }
             }
 
-//            CGImageView(image: model.current, labelText: "Media View") {
-//                ProgressView("Awaiting Media")
-//                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-//            }
-            
         }
     }
     
@@ -134,7 +130,7 @@ struct ContentView: View {
             case (0, 1):
                 Homework1OpenMediaView()
             case (0, 2):
-                OpenCVCanvasView()
+                Homework1OpenMediaView("2201210621 李臻")
             default:
                 EmptyView()
             }

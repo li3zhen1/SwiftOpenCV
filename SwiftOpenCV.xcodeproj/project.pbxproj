@@ -30,7 +30,6 @@
 		B7FC640E29ADDBC60056476B /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B7FC640C29ADDBBF0056476B /* libc++.tbd */; };
 		B7FC640F29ADDBC60056476B /* libc++abi.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B7FC640D29ADDBBF0056476B /* libc++abi.tbd */; };
 		B7FC641129ADDBDC0056476B /* libc.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B7FC641029ADDBD70056476B /* libc.tbd */; };
-		B7FC641429ADEB000056476B /* OpenCVCanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7FC641329ADEB000056476B /* OpenCVCanvasView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,7 +147,6 @@
 		B7FC640D29ADDBBF0056476B /* libc++abi.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++abi.tbd"; path = "Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.1.sdk/usr/lib/libc++abi.tbd"; sourceTree = DEVELOPER_DIR; };
 		B7FC641029ADDBD70056476B /* libc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libc.tbd; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.1.sdk/usr/lib/libc.tbd; sourceTree = DEVELOPER_DIR; };
 		B7FC641229ADDBE50056476B /* libc++.1.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.1.tbd"; path = "Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS16.1.sdk/usr/lib/libc++.1.tbd"; sourceTree = DEVELOPER_DIR; };
-		B7FC641329ADEB000056476B /* OpenCVCanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenCVCanvasView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,7 +219,6 @@
 				B78235A329AC737E00AB8DA2 /* Assets.xcassets */,
 				B78235A529AC737E00AB8DA2 /* SwiftOpenCV.entitlements */,
 				B78235A629AC737E00AB8DA2 /* Preview Content */,
-				B7FC641329ADEB000056476B /* OpenCVCanvasView.swift */,
 			);
 			path = SwiftOpenCV;
 			sourceTree = "<group>";
@@ -509,7 +506,6 @@
 				B79C294B29AC893500882439 /* CGImage+CVMat.swift in Sources */,
 				B79C295329AC9BA100882439 /* OpenCVCameraViewModel.swift in Sources */,
 				B78235A029AC737D00AB8DA2 /* SwiftOpenCVApp.swift in Sources */,
-				B7FC641429ADEB000056476B /* OpenCVCanvasView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
