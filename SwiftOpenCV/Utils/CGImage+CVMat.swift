@@ -14,7 +14,6 @@ import OpenCVWrapper
 /// See https://github.com/opencv/opencv/blob/4.7.0/modules/imgcodecs/src/apple_conversions.mm
 extension cv.Mat {
     
-    
     public func toCGImage() -> CGImage? {
         
         let rev = OpenCV.reverseChannels(self)
@@ -23,7 +22,7 @@ extension cv.Mat {
         
         let colorSpace = rev.elemSize() == 1 ? CGColorSpaceCreateDeviceGray() : CGColorSpaceCreateDeviceRGB()
         let alpha = rev.channels() == 4
-        let bitmapInfo: CGBitmapInfo = ( alpha ? CGImageAlphaInfo.last : CGImageAlphaInfo.none).rawValue | CGImageByteOrderInfo.orderDefault.rawValue
+        let bitmapInfo: CGBitmapInfo = ( alpha ? CGImageAlphaInfo.premultipliedLast : CGImageAlphaInfo.none).rawValue | CGImageByteOrderInfo.orderDefault.rawValue
         
         guard let provider = CGDataProvider(data: nsData) else { return nil }
         
@@ -33,9 +32,15 @@ extension cv.Mat {
     }
     
     
-    static func fromCGImage(_ image: CGImage, m: inout cv.Mat, alphaExist: Bool) -> cv.Mat? {
+    static func fromCGImage(_ image: CGImage, m _m: inout cv.Mat, alphaExist: Bool) -> cv.Mat? {
+        
+        var m = OpenCV.reverseChannels(_m)
+        
         guard var colorSpace = image.colorSpace else {return nil}
+        
         let cols = image.width, rows = image.height
+        
+        
         var bitmapInfo: UInt32 = CGImageAlphaInfo.premultipliedLast.rawValue
         
         let context: CGContext?
@@ -69,7 +74,6 @@ extension cv.Mat {
             else {
                 OpenCV.assign(&m, cv.Scalar(0))
             }
-            
         }
         
         context = .init(data: m.data, width: cols, height: rows, bitsPerComponent: 8, bytesPerRow: m.step[0], space: colorSpace, bitmapInfo: bitmapInfo)
@@ -77,6 +81,8 @@ extension cv.Mat {
         guard let context else { return nil }
         
         context.draw(image, in: CGRect(x: 0, y: 0, width: cols, height: rows))
+        
+        let image = context.makeImage()
         
         return m;
     }
@@ -87,14 +93,14 @@ extension CGImage {
     public func toCvMat(alphaExist: Bool = false) -> cv.Mat? {
         var mat = cv.Mat()
         if let converted = cv.Mat.fromCGImage(self, m: &mat, alphaExist: alphaExist) {
-            return OpenCV.reverseChannels(converted)
+            return converted
         }
         return nil
     }
     
     public func writeToCvMat(mat: inout cv.Mat, alphaExist: Bool) -> cv.Mat? {
         if let converted = cv.Mat.fromCGImage(self, m: &mat, alphaExist: alphaExist) {
-            return OpenCV.reverseChannels(converted)
+            return converted
         }
         return nil
     }

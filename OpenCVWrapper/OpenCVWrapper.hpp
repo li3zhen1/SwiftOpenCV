@@ -18,6 +18,7 @@
 
 #include <opencv2/opencv.hpp>
 #include <string>
+//#include <iostream>
 
 //cv::_InputArray::~_InputArray() {
 //    
@@ -96,7 +97,7 @@ STATIC CAP_PROP_FPS            =5; //!< Frame rate.
 STATIC CAP_PROP_FOURCC         =6; //!< 4-character code of codec. see VideoWriter::fourcc .
 STATIC CAP_PROP_FRAME_COUNT    =7; //!< Number of frames in the video file.
 STATIC CAP_PROP_FORMAT         =8; //!< Format of the %Mat objects (see Mat::type()) returned by VideoCapture::retrieve().
-                            //!< Set value -1 to fetch undecoded RAW video streams (as Mat 8UC1).
+//!< Set value -1 to fetch undecoded RAW video streams (as Mat 8UC1).
 STATIC CAP_PROP_MODE           =9; //!< Backend-specific value indicating the current capture mode.
 STATIC CAP_PROP_BRIGHTNESS    =10; //!< Brightness of the image (only for those cameras that support).
 STATIC CAP_PROP_CONTRAST      =11; //!< Contrast of the image (only for cameras).
@@ -105,7 +106,7 @@ STATIC CAP_PROP_HUE           =13; //!< Hue of the image (only for cameras).
 STATIC CAP_PROP_GAIN          =14; //!< Gain of the image (only for those cameras that support).
 STATIC CAP_PROP_EXPOSURE      =15; //!< Exposure (only for those cameras that support).
 STATIC CAP_PROP_CONVERT_RGB   =16; //!< Boolean flags indicating whether images should be converted to RGB. <br/>
-                            //!< *GStreamer note*: The flag is ignored in case if custom pipeline is used. It's user responsibility to interpret pipeline output.
+//!< *GStreamer note*: The flag is ignored in case if custom pipeline is used. It's user responsibility to interpret pipeline output.
 STATIC CAP_PROP_WHITE_BALANCE_BLUE_U =17; //!< Currently unsupported.
 STATIC CAP_PROP_RECTIFICATION =18; //!< Rectification flag for stereo cameras (note: only supported by DC1394 v 2.x backend currently).
 STATIC CAP_PROP_MONOCHROME    =19;
@@ -187,6 +188,14 @@ inline auto showImage(const std::string& windowName, const cv::Mat& mat) {
     return cv::imshow(windowName, mat);
 }
 
+inline auto writeImage(const char* path, const cv::Mat& mat) {
+//    return cv::imwrite(path, mat);
+}
+
+inline auto writeImage(const cv::Mat& mat) {
+//    return cv::imwrite("/Users/lizhen/Downloads/test.png", mat);
+}
+
 inline cv::String cvString(const char* str) {
     return str;
 }
@@ -199,12 +208,40 @@ inline bool captureFrame(cv::VideoCapture& vc, cv::Mat &mat) {
 
 inline cv::Mat reverseChannels(const cv::Mat &mat) {
     using namespace cv;
-    Mat Bands[3], merged;
-    split(mat, Bands);
-    Mat channels[3] = {Bands[2], Bands[1], Bands[0]};
-    merge(channels, 3, merged);
-    return merged;
+    
+    auto channelCount = mat.channels();
+    
+    if (channelCount == 3 ){
+        Mat Bands[3], merged;
+        split(mat, Bands);
+        
+        Mat channels[3] = {Bands[2], Bands[1], Bands[0]};
+        merge(channels, 3, merged);
+        return merged;
+    }
+    else if (channelCount == 4){
+        Mat Bands[4], merged;
+        split(mat, Bands);
+        // _a__ -> _g__
+        Mat channels[4] = {Bands[3], Bands[2], Bands[1], Bands[0]};
+        merge(channels, 4, merged);
+        
+        return merged;
+    }
+    else {
+        return mat;
+    }
 }
+
+//cv::Mat* getReverseChannels(const cv::Mat &mat) {
+//    using namespace cv;
+//    Mat Bands[3];
+//    Mat merged;
+//    split(mat, Bands);
+//    Mat channels[3] = {Bands[2], Bands[1], Bands[0]};
+//    merge(channels, 3, merged);
+//    return merged;
+//}
 
 inline cv::VideoCapture VideoCapture(const char* path) {
     return cv::VideoCapture(path);
@@ -214,6 +251,56 @@ inline void putText(cv::Mat& mat, const char* text) {
     auto p = cv::Point(100, 200);
     cv::putText(mat, text, p, 0, 2.0, cv::Scalar(0xffffff));
 }
+
+inline std::string stat(const cv::Mat& mat1, const cv::Mat& _mat2) {
+    std::stringstream s;
+    s <<  "Channels" << mat1.channels() << ", " << _mat2.channels() <<std::endl;
+    return s.str();
+}
+
+inline cv::Mat blend(const cv::Mat& mat1, const cv::Mat& _mat2) {
+   
+    assert(mat1.channels() == 3); // RGB
+    assert(_mat2.channels() == 4); // RGBA
+    
+    
+
+    cv::Mat result = mat1;
+    cv::Mat mat2;
+    cv::resize(_mat2,mat2, cv::Size(mat1.cols, mat1.rows));
+    
+    assert(mat2.rows == mat1.rows);
+    assert(mat2.cols == mat1.cols);
+
+//    cv::imwrite("/Users/lizhen/Movies/gen2.png", mat2);
+
+    cv::Mat channels1[3];
+    cv::Mat channels2[4];
+
+    cv::split(mat1, channels1);
+    cv::split(mat2, channels2);
+
+
+//    print(channels2[3], stdout);
+
+    cv::Mat beta = channels2[3];
+    cv::Mat alpha = 255 - beta;
+
+//    cv::imwrite("/Users/lizhen/Movies/alpha.png", alpha);
+//
+//    cv::imwrite("/Users/lizhen/Movies/beta.png", beta);
+
+    cv::Mat ans;
+    cv::Mat channels[3] = {
+        channels1[0].mul(alpha) / 255 + channels2[0].mul(beta) / 255,
+        channels1[1].mul(alpha) / 255 + channels2[1].mul(beta) / 255,
+        channels1[2].mul(alpha) / 255 + channels2[2].mul(beta) / 255
+    };
+
+    cv::merge(channels, 3, ans);
+    return ans;
+}
+
 
 };
 

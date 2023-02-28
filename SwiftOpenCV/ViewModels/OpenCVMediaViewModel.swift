@@ -21,15 +21,46 @@ let testVideoUrl = "/Users/lizhen/Movies/Screen Recording 2023-02-27 at 22.58.20
 let imageExtension = ["jpg", "jpeg" , "png", "webp", "bmp"]
 let videoExtension = ["mp4", "mov"]
 
-class OpenCVMediaViewModel: CGImageViewModel {
+
+func getHeadlineText(text: String, color: NSColor, font: NSFont.TextStyle) -> AttributedString {
+    let a1: [NSAttributedString.Key: Any] = [
+        .foregroundColor: color,
+        .font: NSFont.preferredFont(forTextStyle: font),
+    ]
     
-    //    @Published private var url: URL?
-    //    @Published private var kind: MediaKind?
+    let s = NSMutableAttributedString(string: "1800013025 李臻 😀", attributes: a1)
+    
+    return AttributedString(s)
+}
+
+func getTextImage(text: String, width: Int, height: Int) -> CGImage? {
+    
+    
+    let attrStr = getHeadlineText(text: text, color: .white, font: .largeTitle)
+    
+    let line = CTLineCreateWithAttributedString(NSAttributedString(attrStr))
+    
+    guard let context =  CGContext(data: nil, width: width, height: height, bitsPerComponent: 8, bytesPerRow: 0, space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue | CGImageByteOrderInfo.orderDefault.rawValue) else { return nil }
+    
+    
+    
+    CTLineDraw(line, context)
+    
+    return context.makeImage()
+}
+
+
+
+class OpenCVMediaViewModel: CGImageViewModel {
     
     private var playing = false
     private var timer: Timer?
     private var videoCapture: cv.VideoCapture?
     
+    private var context: CGContext?
+    
+    
+    let textImage = getTextImage(text: "1800013025 李臻 😀", width: 500, height: 500)?.toCvMat(alphaExist: true)
     
     func stopLooping() {
         self.timer?.invalidate()
@@ -37,15 +68,10 @@ class OpenCVMediaViewModel: CGImageViewModel {
     }
     
     
-//    func appendTextToMat(_ mat: inout cv.Mat, _ cgImage: CGImage, _ text: String ) {
-//        let attributedString = AttributedString(text).
-//        let line = CTLineCreateWithAttributedString(attributedString)
-//
-//        let context = CGContext(data: nil, width: Int(mat.cols), height: Int(mat.rows), bitsPerComponent: cgImage.bytesPerRow, bytesPerRow: cgImage.bytesPerRow, space: cgImage.colorSpace!, bitmapInfo: cgImage.bitmapInfo)
-//        let tst = attributedString.boundingRect(with: NSS, options: <#T##NSStringDrawingOptions#>)
-//        attributedString.draw(with: NSRect(x: 0, y: 0, width: 200, height: 200), options: [], context: NSGraphicsContext(cgContext: context, flipped: false))
+//    func appendTextToImage(mat: cv.Mat) -> cv.Mat{
+//        return OpenCV.addWeighted(mat, textImage!)
 //    }
-    
+//
     func loadMedia(_ url: URL, _ text: String? = nil) -> Bool {
         self.stopLooping()
         
@@ -55,14 +81,14 @@ class OpenCVMediaViewModel: CGImageViewModel {
         
         if imageExtension.contains(url.pathExtension) {
             OpenCV.captureFrame(&self.videoCapture!, &mat)
-            if let text {
-                OpenCV.putText(&mat, text)
-            }
-            current = mat.toCGImage()
+            
+            self.current = mat.toCGImage()
+            
             return true
         }
         else if videoExtension.contains(url.pathExtension) {
-            timer = Timer.scheduledTimer(withTimeInterval: 1.0/60, repeats: true, block: { t in
+            let fps = videoCapture?.get(OpenCV.CAP_PROP_FPS) ?? 60
+            timer = Timer.scheduledTimer(withTimeInterval: 1.0/fps, repeats: true, block: { t in
                 if var vc = self.videoCapture {
                     OpenCV.captureFrame(&vc, &mat)
                     

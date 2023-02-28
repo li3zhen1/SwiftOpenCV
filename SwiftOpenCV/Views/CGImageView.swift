@@ -32,6 +32,7 @@ struct CGImageView<Placeholder>: View where Placeholder: View {
                     .scaledToFit()
                     .frame(width: g.size.width, height: g.size.height, alignment: .center)
                     .clipped()
+                    
             }
             else {
                 placeholder
